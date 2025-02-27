@@ -1,0 +1,3 @@
+/home/nemo/src/zGL/zGL/build/CMakeFiles/zGL.dir
+/home/nemo/src/zGL/zGL/build/CMakeFiles/edit_cache.dir
+/home/nemo/src/zGL/zGL/build/CMakeFiles/rebuild_cache.dir

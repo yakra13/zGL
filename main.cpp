@@ -1,5 +1,6 @@
 #include <iostream>
-
+#include <memory>
+// #include <Libraries/include/glad/glad.h>
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
@@ -16,9 +17,12 @@ int main()
 	
 	GraphicsDevice device(pParams);
 
+	std::cout << "Initializing graphics device." << std::endl;
+
 	if (!device.Initialize())
 	{
 		std::cerr << device.GetError() << std::endl;
+		//TODO: probably exit...
 	}
 
 	for (size_t i = 0; i < device.GetMonitorCount(); i++)
@@ -29,12 +33,24 @@ int main()
 	Timer timer;
 	ContentManager contentManager;
 	contentManager.SetRootDirectory(DEFAULT_CONTENT_DIRECTORY);
+	std::cout << "load test shader" << std::endl;
 	std::shared_ptr<Shader> testShader = contentManager.LoadShader({ {"default.frag", ShaderType::Fragment},
 																	 {"default.vert", ShaderType::Vertex} });
+
+	if (!testShader)
+	{
+		std::cerr << "Failed to load the test shader. Do the files exist?" << std::endl;
+		return 1;
+	}
+
+	std::cout << "load test texture" << std::endl;
 	std::shared_ptr<Texture2D> testTexture = contentManager.LoadTexture2D("default.png");
+	std::cout << "load test model" << std::endl;
 	Model testModel = contentManager.LoadModel("fileName.obj");
 
 	//PrimitiveBuilder builder;
+
+	std::cout << "get the window" << std::endl;
 
 	//Mesh cube = builder.BuildCube();
 	//Mesh plane = builder.BuildPlane();

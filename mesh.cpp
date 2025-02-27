@@ -5,6 +5,11 @@ Mesh::Mesh()
 {
 }
 
+Mesh::Mesh(std::vector<Vertex> vertices, std::vector<GLuint> indices)
+{
+	//TODO: pass by ref or value? copy the data? delete the reference?
+}
+
 Mesh::~Mesh()
 {
 }

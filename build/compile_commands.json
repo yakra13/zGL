@@ -1,0 +1,82 @@
+[
+{
+  "directory": "/home/nemo/src/zGL/zGL/build",
+  "command": "/usr/bin/g++  -I/home/nemo/src/zGL/zGL/Libraries/include -I/home/nemo/src/zGL/zGL/Libraries/include/GLFW -g -o CMakeFiles/zGL.dir/camera.cpp.o -c /home/nemo/src/zGL/zGL/camera.cpp",
+  "file": "/home/nemo/src/zGL/zGL/camera.cpp"
+},
+{
+  "directory": "/home/nemo/src/zGL/zGL/build",
+  "command": "/usr/bin/g++  -I/home/nemo/src/zGL/zGL/Libraries/include -I/home/nemo/src/zGL/zGL/Libraries/include/GLFW -g -o CMakeFiles/zGL.dir/contentManager.cpp.o -c /home/nemo/src/zGL/zGL/contentManager.cpp",
+  "file": "/home/nemo/src/zGL/zGL/contentManager.cpp"
+},
+{
+  "directory": "/home/nemo/src/zGL/zGL/build",
+  "command": "/usr/bin/gcc  -I/home/nemo/src/zGL/zGL/Libraries/include -I/home/nemo/src/zGL/zGL/Libraries/include/GLFW -g -o CMakeFiles/zGL.dir/glad.c.o -c /home/nemo/src/zGL/zGL/glad.c",
+  "file": "/home/nemo/src/zGL/zGL/glad.c"
+},
+{
+  "directory": "/home/nemo/src/zGL/zGL/build",
+  "command": "/usr/bin/g++  -I/home/nemo/src/zGL/zGL/Libraries/include -I/home/nemo/src/zGL/zGL/Libraries/include/GLFW -g -o CMakeFiles/zGL.dir/graphicsDevice.cpp.o -c /home/nemo/src/zGL/zGL/graphicsDevice.cpp",
+  "file": "/home/nemo/src/zGL/zGL/graphicsDevice.cpp"
+},
+{
+  "directory": "/home/nemo/src/zGL/zGL/build",
+  "command": "/usr/bin/g++  -I/home/nemo/src/zGL/zGL/Libraries/include -I/home/nemo/src/zGL/zGL/Libraries/include/GLFW -g -o CMakeFiles/zGL.dir/main.cpp.o -c /home/nemo/src/zGL/zGL/main.cpp",
+  "file": "/home/nemo/src/zGL/zGL/main.cpp"
+},
+{
+  "directory": "/home/nemo/src/zGL/zGL/build",
+  "command": "/usr/bin/g++  -I/home/nemo/src/zGL/zGL/Libraries/include -I/home/nemo/src/zGL/zGL/Libraries/include/GLFW -g -o CMakeFiles/zGL.dir/material.cpp.o -c /home/nemo/src/zGL/zGL/material.cpp",
+  "file": "/home/nemo/src/zGL/zGL/material.cpp"
+},
+{
+  "directory": "/home/nemo/src/zGL/zGL/build",
+  "command": "/usr/bin/g++  -I/home/nemo/src/zGL/zGL/Libraries/include -I/home/nemo/src/zGL/zGL/Libraries/include/GLFW -g -o CMakeFiles/zGL.dir/mesh.cpp.o -c /home/nemo/src/zGL/zGL/mesh.cpp",
+  "file": "/home/nemo/src/zGL/zGL/mesh.cpp"
+},
+{
+  "directory": "/home/nemo/src/zGL/zGL/build",
+  "command": "/usr/bin/g++  -I/home/nemo/src/zGL/zGL/Libraries/include -I/home/nemo/src/zGL/zGL/Libraries/include/GLFW -g -o CMakeFiles/zGL.dir/model.cpp.o -c /home/nemo/src/zGL/zGL/model.cpp",
+  "file": "/home/nemo/src/zGL/zGL/model.cpp"
+},
+{
+  "directory": "/home/nemo/src/zGL/zGL/build",
+  "command": "/usr/bin/g++  -I/home/nemo/src/zGL/zGL/Libraries/include -I/home/nemo/src/zGL/zGL/Libraries/include/GLFW -g -o CMakeFiles/zGL.dir/presentationParameters.cpp.o -c /home/nemo/src/zGL/zGL/presentationParameters.cpp",
+  "file": "/home/nemo/src/zGL/zGL/presentationParameters.cpp"
+},
+{
+  "directory": "/home/nemo/src/zGL/zGL/build",
+  "command": "/usr/bin/g++  -I/home/nemo/src/zGL/zGL/Libraries/include -I/home/nemo/src/zGL/zGL/Libraries/include/GLFW -g -o CMakeFiles/zGL.dir/primitiveBuilder.cpp.o -c /home/nemo/src/zGL/zGL/primitiveBuilder.cpp",
+  "file": "/home/nemo/src/zGL/zGL/primitiveBuilder.cpp"
+},
+{
+  "directory": "/home/nemo/src/zGL/zGL/build",
+  "command": "/usr/bin/g++  -I/home/nemo/src/zGL/zGL/Libraries/include -I/home/nemo/src/zGL/zGL/Libraries/include/GLFW -g -o CMakeFiles/zGL.dir/stb_image.cpp.o -c /home/nemo/src/zGL/zGL/stb_image.cpp",
+  "file": "/home/nemo/src/zGL/zGL/stb_image.cpp"
+},
+{
+  "directory": "/home/nemo/src/zGL/zGL/build",
+  "command": "/usr/bin/g++  -I/home/nemo/src/zGL/zGL/Libraries/include -I/home/nemo/src/zGL/zGL/Libraries/include/GLFW -g -o CMakeFiles/zGL.dir/texture2d.cpp.o -c /home/nemo/src/zGL/zGL/texture2d.cpp",
+  "file": "/home/nemo/src/zGL/zGL/texture2d.cpp"
+},
+{
+  "directory": "/home/nemo/src/zGL/zGL/build",
+  "command": "/usr/bin/g++  -I/home/nemo/src/zGL/zGL/Libraries/include -I/home/nemo/src/zGL/zGL/Libraries/include/GLFW -g -o CMakeFiles/zGL.dir/timer.cpp.o -c /home/nemo/src/zGL/zGL/timer.cpp",
+  "file": "/home/nemo/src/zGL/zGL/timer.cpp"
+},
+{
+  "directory": "/home/nemo/src/zGL/zGL/build",
+  "command": "/usr/bin/g++  -I/home/nemo/src/zGL/zGL/Libraries/include -I/home/nemo/src/zGL/zGL/Libraries/include/GLFW -g -o CMakeFiles/zGL.dir/tiny_obj_loader.cpp.o -c /home/nemo/src/zGL/zGL/tiny_obj_loader.cpp",
+  "file": "/home/nemo/src/zGL/zGL/tiny_obj_loader.cpp"
+},
+{
+  "directory": "/home/nemo/src/zGL/zGL/build",
+  "command": "/usr/bin/g++  -I/home/nemo/src/zGL/zGL/Libraries/include -I/home/nemo/src/zGL/zGL/Libraries/include/GLFW -g -o CMakeFiles/zGL.dir/zshader.cpp.o -c /home/nemo/src/zGL/zGL/zshader.cpp",
+  "file": "/home/nemo/src/zGL/zGL/zshader.cpp"
+},
+{
+  "directory": "/home/nemo/src/zGL/zGL/build",
+  "command": "/usr/bin/g++  -I/home/nemo/src/zGL/zGL/Libraries/include -I/home/nemo/src/zGL/zGL/Libraries/include/GLFW -g -o CMakeFiles/zGL.dir/zviewport.cpp.o -c /home/nemo/src/zGL/zGL/zviewport.cpp",
+  "file": "/home/nemo/src/zGL/zGL/zviewport.cpp"
+}
+]

@@ -30,6 +30,7 @@ class Mesh
 
 	public:
 		Mesh();
+		Mesh(std::vector<Vertex> vertices, std::vector<GLuint> indices);
 		~Mesh();
 		bool LoadFromFile(std::string path);
 		void Update(float deltaTime);

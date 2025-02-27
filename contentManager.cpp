@@ -1,5 +1,7 @@
 #include "contentManager.h"
 
+ContentManager* ContentManager::instance = nullptr;
+
 void ContentManager::SetRootDirectory(const std::string& directory)
 {
 	// TODO: validation all over the place

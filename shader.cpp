@@ -3,17 +3,20 @@
 std::string getFileContents(std::string fileName)
 {
 	std::ifstream in(fileName, std::ios::binary);
-	if (in)
+	if (!in)
 	{
-		std::string contents;
-		in.seekg(0, std::ios::end);
-		contents.resize(in.tellg());
-		in.seekg(0, std::ios::beg);
-		in.read(&contents[0], contents.size());
-		in.close();
-		return (contents);
+		throw std::ios_base::failure("Error: Unable to open file " + fileName);
 	}
-	throw(errno);
+	
+	std::string contents;
+	
+	in.seekg(0, std::ios::end);
+	contents.resize(in.tellg());
+	in.seekg(0, std::ios::beg);
+	in.read(&contents[0], contents.size());
+	in.close();
+
+	return (contents);
 }
 
 Shader::Shader()
@@ -59,8 +62,20 @@ bool Shader::Build()
 	for (const auto& [type, path] : _shaderPaths)
 	{
 		tempId = glCreateShader((GLenum)type);
+		std::cout << "trying" << std::endl;
+		std::string ssource = std::string();
 
-		std::string ssource = getFileContents(path);
+		try
+		{
+			ssource = getFileContents(path);
+			
+		}
+		catch(const std::ios_base::failure& e)
+		{
+			std::cout << "Caught exception: " << e.what() << std::endl;
+			return false;
+		}
+		
 		const char* source = ssource.c_str();
 
 		glShaderSource(tempId, 1, &source, NULL);
@@ -156,26 +171,26 @@ void Shader::SetUniform(const std::string& name, const int value)
 	GLint location = _uniformInfos[name].location;
 	glUniform1i(location, value);
 
-if (std::is_same<T, glm::vec3>::value)
-	{
+	// if (std::is_same<T, glm::vec3>::value)
+	// {
 		
-	}
-	else if (std::is_same<T, glm::vec4>::value)
-	{
-		glUniform4fv(location, 1, glm::value_ptr(value));
-	}
-	else if (std::is_same<T, glm::mat3>::value)
-	{
-		glUniformMatrix3fv(location, 1, false, (const float*)glm::value_ptr(value));
-	}
-	else if (std::is_same<T, glm::mat4>::value)
-	{
-		glUniformMatrix4fv(location, 1, false, (const float*)glm::value_ptr(value));
-	}
-	else
-	{
-		// TODO: value type not supported
-	}
+	// }
+	// else if (std::is_same<T, glm::vec4>::value)
+	// {
+	// 	glUniform4fv(location, 1, glm::value_ptr(value));
+	// }
+	// else if (std::is_same<T, glm::mat3>::value)
+	// {
+	// 	glUniformMatrix3fv(location, 1, false, (const float*)glm::value_ptr(value));
+	// }
+	// else if (std::is_same<T, glm::mat4>::value)
+	// {
+	// 	glUniformMatrix4fv(location, 1, false, (const float*)glm::value_ptr(value));
+	// }
+	// else
+	// {
+	// 	// TODO: value type not supported
+	// }
 }
 
 void Shader::SetUniform(const std::string& name, const float value)

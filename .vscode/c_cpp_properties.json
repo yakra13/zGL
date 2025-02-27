@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "name": "zGL",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/Libraries",
+                "${workspaceFolder}/Libraries/include"
+            ],
+            "intelliSenseMode": "linux-gcc-x64"
+        }
+    ],
+    "version": 4
+}

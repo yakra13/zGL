@@ -12,6 +12,6 @@ Material::~Material()
 template<typename T>
 void Material::SetUniform(const std::string& name, const T& value)
 {
-	_shader.SetUniform(name, value);
+	_shader->SetUniform(name, value);
 
 }

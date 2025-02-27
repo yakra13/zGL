@@ -1,0 +1,41 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/zGL.dir/camera.cpp.o"
+  "CMakeFiles/zGL.dir/camera.cpp.o.d"
+  "CMakeFiles/zGL.dir/contentManager.cpp.o"
+  "CMakeFiles/zGL.dir/contentManager.cpp.o.d"
+  "CMakeFiles/zGL.dir/glad.c.o"
+  "CMakeFiles/zGL.dir/glad.c.o.d"
+  "CMakeFiles/zGL.dir/graphicsDevice.cpp.o"
+  "CMakeFiles/zGL.dir/graphicsDevice.cpp.o.d"
+  "CMakeFiles/zGL.dir/main.cpp.o"
+  "CMakeFiles/zGL.dir/main.cpp.o.d"
+  "CMakeFiles/zGL.dir/material.cpp.o"
+  "CMakeFiles/zGL.dir/material.cpp.o.d"
+  "CMakeFiles/zGL.dir/mesh.cpp.o"
+  "CMakeFiles/zGL.dir/mesh.cpp.o.d"
+  "CMakeFiles/zGL.dir/model.cpp.o"
+  "CMakeFiles/zGL.dir/model.cpp.o.d"
+  "CMakeFiles/zGL.dir/presentationParameters.cpp.o"
+  "CMakeFiles/zGL.dir/presentationParameters.cpp.o.d"
+  "CMakeFiles/zGL.dir/primitiveBuilder.cpp.o"
+  "CMakeFiles/zGL.dir/primitiveBuilder.cpp.o.d"
+  "CMakeFiles/zGL.dir/stb_image.cpp.o"
+  "CMakeFiles/zGL.dir/stb_image.cpp.o.d"
+  "CMakeFiles/zGL.dir/texture2d.cpp.o"
+  "CMakeFiles/zGL.dir/texture2d.cpp.o.d"
+  "CMakeFiles/zGL.dir/timer.cpp.o"
+  "CMakeFiles/zGL.dir/timer.cpp.o.d"
+  "CMakeFiles/zGL.dir/tiny_obj_loader.cpp.o"
+  "CMakeFiles/zGL.dir/tiny_obj_loader.cpp.o.d"
+  "CMakeFiles/zGL.dir/zshader.cpp.o"
+  "CMakeFiles/zGL.dir/zshader.cpp.o.d"
+  "CMakeFiles/zGL.dir/zviewport.cpp.o"
+  "CMakeFiles/zGL.dir/zviewport.cpp.o.d"
+  "zGL"
+  "zGL.pdb"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang C CXX)
+  include(CMakeFiles/zGL.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

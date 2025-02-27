@@ -13,6 +13,7 @@ void Camera::Update()
 	switch (_type)
 	{
 		case CameraType::LookAt:
+		{
 			glm::vec3 direction = glm::normalize(_target - _position); // Vector pointing to the target
 			glm::vec3 newRight  = glm::normalize(glm::cross(_worldUp, direction)); // Right vector
 			glm::vec3 newUp     = glm::cross(direction, newRight); // Up vector
@@ -23,7 +24,9 @@ void Camera::Update()
 			
 			_UpdateVectors();
 			break;
+		}
 		case CameraType::Arcball:
+		{
 			glm::quat pitchQ = glm::angleAxis(glm::radians(_pitch), _right);
 			glm::quat yawQ = glm::angleAxis(glm::radians(_yaw), _up); // TODO: _worldUp instead if it acts weird
 			glm::quat rollQ = glm::angleAxis(glm::radians(_roll), _front);
@@ -34,15 +37,18 @@ void Camera::Update()
 			
 			_position = _target - _front * _distance;
 			break;
+		}
 		case CameraType::Free:
 		default:
-			pitchQ = glm::angleAxis(glm::radians(_pitch), _right);
-			yawQ = glm::angleAxis(glm::radians(_yaw), _up); // TODO: _worldUp instead if it acts weird
-			rollQ = glm::angleAxis(glm::radians(_roll), _front);
+		{
+			glm::quat pitchQ = glm::angleAxis(glm::radians(_pitch), _right);
+			glm::quat yawQ = glm::angleAxis(glm::radians(_yaw), _up); // TODO: _worldUp instead if it acts weird
+			glm::quat rollQ = glm::angleAxis(glm::radians(_roll), _front);
 
 			_orientation = glm::normalize(yawQ * pitchQ * rollQ * _orientation);
 			
 			_UpdateVectors();
+		}
 	}
 
 	_view = glm::toMat4(_orientation) * glm::translate(glm::mat4(1.0f), _position);

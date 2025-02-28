@@ -4,6 +4,7 @@
 #include <sstream>
 #include <map>
 #include <type_traits>
+#include <vector>
 
 // TODO: content loader
 #include <iostream>
@@ -33,6 +34,13 @@ struct UniformInfo
 	GLint location;
 };
 
+struct ShaderErrorLog
+{
+	std::string path;
+	ShaderType type;
+	std::string info;
+};
+
 class Shader
 {
 	private:
@@ -42,7 +50,9 @@ class Shader
 		std::map<ShaderType, GLuint> _shaderIds;
 		std::map<const std::string, UniformInfo> _uniformInfos;
 
-		bool _GetCompilerErrors(GLuint shader, ShaderType type);
+		std::vector<ShaderErrorLog> _errors; 
+
+		bool _GetCompilerErrors(GLuint shader, ShaderType type, std::string path = "");
 		void _GetShaderUniforms();
 	public:
 		Shader();
@@ -53,6 +63,7 @@ class Shader
 		void SetShaderSource(std::string source, ShaderType type);
 		bool Build();
 		std::string GetShaderInfo();
+		std::string GetErrorInfo();
 		
 		void SetUniform(const std::string& name, const int value);
 		void SetUniform(const std::string& name, const float value);

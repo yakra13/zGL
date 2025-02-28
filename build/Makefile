@@ -369,6 +369,30 @@ primitiveBuilder.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/zGL.dir/build.make CMakeFiles/zGL.dir/primitiveBuilder.cpp.s
 .PHONY : primitiveBuilder.cpp.s
 
+shader.o: shader.cpp.o
+.PHONY : shader.o
+
+# target to build an object file
+shader.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/zGL.dir/build.make CMakeFiles/zGL.dir/shader.cpp.o
+.PHONY : shader.cpp.o
+
+shader.i: shader.cpp.i
+.PHONY : shader.i
+
+# target to preprocess a source file
+shader.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/zGL.dir/build.make CMakeFiles/zGL.dir/shader.cpp.i
+.PHONY : shader.cpp.i
+
+shader.s: shader.cpp.s
+.PHONY : shader.s
+
+# target to generate assembly for a file
+shader.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/zGL.dir/build.make CMakeFiles/zGL.dir/shader.cpp.s
+.PHONY : shader.cpp.s
+
 stb_image.o: stb_image.cpp.o
 .PHONY : stb_image.o
 
@@ -465,30 +489,6 @@ tiny_obj_loader.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/zGL.dir/build.make CMakeFiles/zGL.dir/tiny_obj_loader.cpp.s
 .PHONY : tiny_obj_loader.cpp.s
 
-zshader.o: zshader.cpp.o
-.PHONY : zshader.o
-
-# target to build an object file
-zshader.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/zGL.dir/build.make CMakeFiles/zGL.dir/zshader.cpp.o
-.PHONY : zshader.cpp.o
-
-zshader.i: zshader.cpp.i
-.PHONY : zshader.i
-
-# target to preprocess a source file
-zshader.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/zGL.dir/build.make CMakeFiles/zGL.dir/zshader.cpp.i
-.PHONY : zshader.cpp.i
-
-zshader.s: zshader.cpp.s
-.PHONY : zshader.s
-
-# target to generate assembly for a file
-zshader.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/zGL.dir/build.make CMakeFiles/zGL.dir/zshader.cpp.s
-.PHONY : zshader.cpp.s
-
 zviewport.o: zviewport.cpp.o
 .PHONY : zviewport.o
 
@@ -552,6 +552,9 @@ help:
 	@echo "... primitiveBuilder.o"
 	@echo "... primitiveBuilder.i"
 	@echo "... primitiveBuilder.s"
+	@echo "... shader.o"
+	@echo "... shader.i"
+	@echo "... shader.s"
 	@echo "... stb_image.o"
 	@echo "... stb_image.i"
 	@echo "... stb_image.s"
@@ -564,9 +567,6 @@ help:
 	@echo "... tiny_obj_loader.o"
 	@echo "... tiny_obj_loader.i"
 	@echo "... tiny_obj_loader.s"
-	@echo "... zshader.o"
-	@echo "... zshader.i"
-	@echo "... zshader.s"
 	@echo "... zviewport.o"
 	@echo "... zviewport.i"
 	@echo "... zviewport.s"

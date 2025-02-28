@@ -265,19 +265,19 @@ CMakeFiles/zGL.dir/tiny_obj_loader.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/zGL.dir/tiny_obj_loader.cpp.s"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/nemo/src/zGL/zGL/tiny_obj_loader.cpp -o CMakeFiles/zGL.dir/tiny_obj_loader.cpp.s
 
-CMakeFiles/zGL.dir/zshader.cpp.o: CMakeFiles/zGL.dir/flags.make
-CMakeFiles/zGL.dir/zshader.cpp.o: ../zshader.cpp
-CMakeFiles/zGL.dir/zshader.cpp.o: CMakeFiles/zGL.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nemo/src/zGL/zGL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/zGL.dir/zshader.cpp.o"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/zGL.dir/zshader.cpp.o -MF CMakeFiles/zGL.dir/zshader.cpp.o.d -o CMakeFiles/zGL.dir/zshader.cpp.o -c /home/nemo/src/zGL/zGL/zshader.cpp
+CMakeFiles/zGL.dir/shader.cpp.o: CMakeFiles/zGL.dir/flags.make
+CMakeFiles/zGL.dir/shader.cpp.o: ../shader.cpp
+CMakeFiles/zGL.dir/shader.cpp.o: CMakeFiles/zGL.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nemo/src/zGL/zGL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/zGL.dir/shader.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/zGL.dir/shader.cpp.o -MF CMakeFiles/zGL.dir/shader.cpp.o.d -o CMakeFiles/zGL.dir/shader.cpp.o -c /home/nemo/src/zGL/zGL/shader.cpp
 
-CMakeFiles/zGL.dir/zshader.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/zGL.dir/zshader.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/nemo/src/zGL/zGL/zshader.cpp > CMakeFiles/zGL.dir/zshader.cpp.i
+CMakeFiles/zGL.dir/shader.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/zGL.dir/shader.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/nemo/src/zGL/zGL/shader.cpp > CMakeFiles/zGL.dir/shader.cpp.i
 
-CMakeFiles/zGL.dir/zshader.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/zGL.dir/zshader.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/nemo/src/zGL/zGL/zshader.cpp -o CMakeFiles/zGL.dir/zshader.cpp.s
+CMakeFiles/zGL.dir/shader.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/zGL.dir/shader.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/nemo/src/zGL/zGL/shader.cpp -o CMakeFiles/zGL.dir/shader.cpp.s
 
 CMakeFiles/zGL.dir/zviewport.cpp.o: CMakeFiles/zGL.dir/flags.make
 CMakeFiles/zGL.dir/zviewport.cpp.o: ../zviewport.cpp
@@ -309,7 +309,7 @@ zGL_OBJECTS = \
 "CMakeFiles/zGL.dir/texture2d.cpp.o" \
 "CMakeFiles/zGL.dir/timer.cpp.o" \
 "CMakeFiles/zGL.dir/tiny_obj_loader.cpp.o" \
-"CMakeFiles/zGL.dir/zshader.cpp.o" \
+"CMakeFiles/zGL.dir/shader.cpp.o" \
 "CMakeFiles/zGL.dir/zviewport.cpp.o"
 
 # External object files for target zGL
@@ -329,11 +329,12 @@ zGL: CMakeFiles/zGL.dir/stb_image.cpp.o
 zGL: CMakeFiles/zGL.dir/texture2d.cpp.o
 zGL: CMakeFiles/zGL.dir/timer.cpp.o
 zGL: CMakeFiles/zGL.dir/tiny_obj_loader.cpp.o
-zGL: CMakeFiles/zGL.dir/zshader.cpp.o
+zGL: CMakeFiles/zGL.dir/shader.cpp.o
 zGL: CMakeFiles/zGL.dir/zviewport.cpp.o
 zGL: CMakeFiles/zGL.dir/build.make
 zGL: ../Libraries/lib/libglfw3.a
-zGL: /usr/lib/x86_64-linux-gnu/libGL.so
+zGL: /usr/lib/x86_64-linux-gnu/libGLX.so
+zGL: /usr/lib/x86_64-linux-gnu/libOpenGL.so
 zGL: CMakeFiles/zGL.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/nemo/src/zGL/zGL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Linking CXX executable zGL"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/zGL.dir/link.txt --verbose=$(VERBOSE)

@@ -1,4 +1,5 @@
 #include "shader.h"
+#include <memory>
 
 std::string getFileContents(std::string fileName)
 {
@@ -50,8 +51,11 @@ void Shader::SetShaderSource(std::string source, ShaderType type)
 	_shaderPaths[type] = source;
 }
 
+//TODO: maybe should be void or something else. Returning false because the shader has already been built
+//could be misleading. Possibly a bool for already built?
 bool Shader::Build()
 {
+	// Check if the shader program has already been built
 	if (_id != 0)
 	{
 		return false;
@@ -59,6 +63,7 @@ bool Shader::Build()
 	
 	GLuint tempId = 0;
 
+	// Compile each shader source
 	for (const auto& [type, path] : _shaderPaths)
 	{
 		tempId = glCreateShader((GLenum)type);
@@ -81,15 +86,22 @@ bool Shader::Build()
 		glShaderSource(tempId, 1, &source, NULL);
 		glCompileShader(tempId);
 
-		if (_GetCompilerErrors(tempId, type) == false)
+		// Check for compilation errors
+		if (_GetCompilerErrors(tempId, type, path) == false)
 		{
 			// TODO: got compilation error
 			// TODO: reset id map probably
-			return false;
+			std::cout << "There was compiler errors yo" << std::endl;
+			// return false;
+			_shaderIds[type] = 0;
 		}
-
-		_shaderIds[type] = tempId;
+		else
+			_shaderIds[type] = tempId;
 	}
+
+	//TODO: Exit early if any of the shader sources failed to compile
+	// Need to inform the caller of fail to compile shader source, or already built
+	// Should delete shader ids see below glDeleteShader
 
 	_id = glCreateProgram();
 	
@@ -165,6 +177,10 @@ std::string Shader::GetShaderInfo()
 	return ss.str();
 }
 
+std::string Shader::GetErrorInfo()
+{
+    return std::string();
+}
 
 void Shader::SetUniform(const std::string& name, const int value)
 {
@@ -231,11 +247,10 @@ void Shader::SetUniformArray(const std::string& name, const T& values, size_t co
 }
 
 
-bool Shader::_GetCompilerErrors(GLuint shader, ShaderType type)
+bool Shader::_GetCompilerErrors(GLuint shader, ShaderType type, std::string path)
 {
 	GLint didCompile = GL_FALSE;
-
-	char infoLog[1024];
+	GLint logLength = 0;
 
 	if (type != ShaderType::Program)
 	{
@@ -243,9 +258,17 @@ bool Shader::_GetCompilerErrors(GLuint shader, ShaderType type)
 
 		if (didCompile == GL_FALSE)
 		{
-			glGetShaderInfoLog(shader, 1024, NULL, infoLog);
+			glGetShaderiv(shader, GL_INFO_LOG_LENGTH, &logLength);
+
+			std::unique_ptr<char[]> log(new char[logLength]);
+
+			glGetShaderInfoLog(shader, logLength, nullptr, log.get());
 
 			// TODO: store the error info, compilation error
+			std::cout << "Shader log:\n" << log.get() << std::endl;
+
+			// Add error to error list
+			_errors.push_back({path, type, log.get()});
 		}
 	}
 	else
@@ -254,9 +277,12 @@ bool Shader::_GetCompilerErrors(GLuint shader, ShaderType type)
 			
 		if (didCompile == GL_FALSE)
 		{
-			glGetProgramInfoLog(shader, 1024, NULL, infoLog);
+			glGetProgramiv(shader, GL_INFO_LOG_LENGTH, &logLength);
+			std::unique_ptr<char[]> log(new char[logLength]);
+			glGetProgramInfoLog(shader, logLength, nullptr, log.get());
 			
 			// TODO: store the error info, linking error
+			_errors.push_back({path, type, log.get()});
 		}
 	}
 

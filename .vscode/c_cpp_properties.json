@@ -4,6 +4,7 @@
             "name": "zGL",
             "includePath": [
                 "${workspaceFolder}/**",
+                "${workspaceFolder}/device",
                 "${workspaceFolder}/Libraries",
                 "${workspaceFolder}/Libraries/include"
             ],

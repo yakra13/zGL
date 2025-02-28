@@ -71,8 +71,8 @@
 },
 {
   "directory": "/home/nemo/src/zGL/zGL/build",
-  "command": "/usr/bin/g++  -I/home/nemo/src/zGL/zGL/Libraries/include -I/home/nemo/src/zGL/zGL/Libraries/include/GLFW -g -o CMakeFiles/zGL.dir/zshader.cpp.o -c /home/nemo/src/zGL/zGL/zshader.cpp",
-  "file": "/home/nemo/src/zGL/zGL/zshader.cpp"
+  "command": "/usr/bin/g++  -I/home/nemo/src/zGL/zGL/Libraries/include -I/home/nemo/src/zGL/zGL/Libraries/include/GLFW -g -o CMakeFiles/zGL.dir/shader.cpp.o -c /home/nemo/src/zGL/zGL/shader.cpp",
+  "file": "/home/nemo/src/zGL/zGL/shader.cpp"
 },
 {
   "directory": "/home/nemo/src/zGL/zGL/build",

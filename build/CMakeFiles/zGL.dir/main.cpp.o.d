@@ -363,7 +363,7 @@ CMakeFiles/zGL.dir/main.cpp.o: /home/nemo/src/zGL/zGL/main.cpp \
  /home/nemo/src/zGL/zGL/Libraries/include/glm/detail/type_half.inl \
  /home/nemo/src/zGL/zGL/Libraries/include/glm/integer.hpp \
  /home/nemo/src/zGL/zGL/Libraries/include/glm/detail/func_integer.inl \
- /home/nemo/src/zGL/zGL/material.h /home/nemo/src/zGL/zGL/zshader.h \
+ /home/nemo/src/zGL/zGL/material.h /home/nemo/src/zGL/zGL/shader.h \
  /usr/include/c++/11/sstream /usr/include/c++/11/bits/sstream.tcc \
  /usr/include/c++/11/fstream /usr/include/c++/11/bits/codecvt.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/basic_file.h \

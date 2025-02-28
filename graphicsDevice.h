@@ -42,6 +42,11 @@ class GraphicsDevice
 		std::vector<MonitorInfo> _monitorInfos;
 		GLFWmonitor* _selectedMonitor = nullptr;
 
+		std::string _vendor;
+		std::string _renderer;
+		std::string _version;
+		std::string _shadingLanguageVersion;
+
 		GLuint _fixedFrameBuffer = 0;
 		GLuint _fixedFrameBufferTexture = 0;
 		std::map<const std::string, ZViewport> _viewports;
@@ -52,7 +57,7 @@ class GraphicsDevice
 		//bool _isFullScreen = false;
 
 		//std::string _windowTitle = "zGL";
-
+		void _GetDeviceInfo();
 		void _SetGLFWErrorMessage(const char* message);
 		static void _FrameBufferSizeCallback(GLFWwindow* window, int width, int height);
 		void _ScaleViewports(int width, int height);
@@ -67,6 +72,7 @@ class GraphicsDevice
 		void UpdatePresentationParameters();
 		size_t GetMonitorCount() { return _monitorInfos.size(); }
 		void PrintMonitorInfo(size_t index);
+		void PrintDeviceInfo();
 
 		GLFWwindow* GetWindow() { return _window; }
 

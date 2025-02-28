@@ -53,6 +53,9 @@ bool GraphicsDevice::Initialize()
 		_monitorInfos.emplace_back(mi);
 	}
 
+	// Gather device info
+	_GetDeviceInfo();
+
 	// Create the window
 	_window = glfwCreateWindow(_pParams.preferredWindowWidth,
 							   _pParams.preferredWindowHeight,
@@ -164,6 +167,26 @@ bool GraphicsDevice::Initialize()
 	return true;
 }
 
+void GraphicsDevice::_GetDeviceInfo()
+{
+	auto getGLString = []()
+	const char* vendorStr = reinterpret_cast<const char*>(glGetString(GL_VENDOR));
+	_vendor = vendorStr ? std::string(vendorStr) : "Unknown";
+	
+	const char* rendererStr = reinterpret_cast<const char*>(glGetString(GL_RENDERER));
+	_renderer = rendererStr ? std::string(rendererStr) : "Unknown";
+
+	const char* rendererStr = reinterpret_cast<const char*>(glGetString(GL_VERSION));
+	_renderer = rendererStr ? std::string(rendererStr) : "Unknown";
+
+	const char* rendererStr = reinterpret_cast<const char*>(glGetString(GL_SHADING_LANGUAGE_VERSION));
+	_renderer = rendererStr ? std::string(rendererStr) : "Unknown";
+	_vendor;
+	_renderer;
+	_version;
+	_shadingLanguageVersion;
+}
+
 void GraphicsDevice::UpdatePresentationParameters()
 {
 	// TODO: update presentation parameters that have changed
@@ -221,6 +244,11 @@ void GraphicsDevice::PrintMonitorInfo(size_t index)
 	std::cout << "Refresh Rate: " << _monitorInfos[index].mode.refreshRate << "Hz" << std::endl;
 	std::cout << "Color Bits: " << _monitorInfos[index].mode.redBits << "/" << _monitorInfos[index].mode.greenBits << "/" << _monitorInfos[index].mode.blueBits << std::endl;
 	std::cout << std::endl;
+}
+
+void GraphicsDevice::PrintDeviceInfo()
+{
+
 }
 
 void GraphicsDevice::Clear()
